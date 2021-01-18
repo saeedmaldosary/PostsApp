@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.saeedmaldosary.myapplication.R
+import com.saeedmaldosary.postsapp.R
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.File
@@ -31,7 +31,9 @@ class DetailsActivity : AppCompatActivity() {
 
         storageReference.getFile(localFile).addOnSuccessListener {
             var bitmap: Bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-            findViewById<ImageView>(R.id.postImage).setImageBitmap(bitmap)
+            //Change the size of images
+            var resized:Bitmap = Bitmap.createScaledBitmap(bitmap, 800, 500, true);
+            findViewById<ImageView>(R.id.postImage).setImageBitmap(resized)
         }
 
         //Set action Bar
@@ -44,7 +46,7 @@ class DetailsActivity : AppCompatActivity() {
 
     }
 
-    //When the back button clicked
+    //Handel back button
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

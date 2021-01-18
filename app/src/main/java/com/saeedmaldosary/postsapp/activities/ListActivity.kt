@@ -9,11 +9,9 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import com.saeedmaldosary.postsapp.database.Data
-import com.saeedmaldosary.myapplication.R
+import com.saeedmaldosary.postsapp.R
 import com.google.firebase.database.*
-import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.concurrent.timerTask
 
 class ListActivity : AppCompatActivity() {
 
@@ -22,6 +20,7 @@ class ListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
+
 
 
         var listView = findViewById<ListView>(R.id.listview)
@@ -34,6 +33,7 @@ class ListActivity : AppCompatActivity() {
         //Perform the refresh app function
         refreshApp(arrayListTitles)
 
+        //Assign the array adapter to the list view
         listView.adapter = arrayadapter
 
         //Initialize database constructor
@@ -84,5 +84,11 @@ class ListActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    //Handel back button
+    override fun onBackPressed() {
+        var intent = Intent(this, ListActivity::class.java)
+        startActivity(intent)
     }
 }

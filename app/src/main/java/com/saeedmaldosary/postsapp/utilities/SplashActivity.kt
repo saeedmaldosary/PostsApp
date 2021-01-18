@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.saeedmaldosary.myapplication.R
+import com.saeedmaldosary.postsapp.R
 import com.saeedmaldosary.postsapp.activities.ListActivity
 
 
