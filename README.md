@@ -1,4 +1,4 @@
-# PostsApp
+# Posts App
 
 ![AppImgGit](https://user-images.githubusercontent.com/52779920/104915917-604a7b00-59a2-11eb-9e73-4ef5d77efcfe.png)
 
